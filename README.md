@@ -22,9 +22,9 @@ make <target>
 bash run.sh <arguments>
 ```
 
-## To get help:
+## Links:
 
   * [Source Code](https://github.com/stanford-ppl/spatial-lang)
   * [Website](https://spatial.stanford.edu)
   * [Documentation](http://spatial-lang.readthedocs.io/en/latest/)
-  * [Google Groups](https://groups.google.com/forum/#!forum/spatial-lang-users)
+  * [Forum](https://groups.google.com/forum/#!forum/spatial-lang-users)
