@@ -2,7 +2,7 @@ import spatial.dsl._
 import virtualized._
 import spatial.targets._
 
-object App extends SpatialApp {
+object Quicktest extends SpatialApp {
   @virtualize
   def main() {
     // Your code here
