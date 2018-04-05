@@ -16,7 +16,7 @@ export SPATIAL_HOME=`pwd`/spatial-quickstart
 ## To run:
 
 ```bash
-sbt "runMain <name of app> <compile flags>"
+bin/spatial <name of app> <compile flags>
 cd <generated directory>
 make <target>
 bash run.sh <arguments>
