@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+
+import glob
+import re
+from argparse import ArgumentParser
+import os, sys, datetime
+import subprocess
+from os.path import dirname, abspath
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def main():
+  parser = ArgumentParser(add_help=False)
+  parser.add_argument('app', type=str, help='name of application to run')
+
+
+  (opts, args) = parser.parse_known_args()
+
+  java_cmd = "sbt \"" + sbt_project + "runMain " + name + " --name " + opts.app + " " + ' '.join(args) + "\""
+
+  print(java_cmd)
+
+  ecode = os.system(java_cmd)
+
+  if ecode != 0:
+    print("[" + bcolors.FAIL + "error" + bcolors.ENDC + "] Spatial compilation failed")
+  else:
+    # if not any("--withoutSrc" in s for s in args):
+    #   getSrcCode(opts.app, args)
+    simScript = open(opts.app + ".sim", 'w')
+    simScript.write("#!/bin/bash\n\n")
+    simScript.write("cd gen/" + opts.app + "\n")
+    simScript.write("bash run.sh \"$@\"\n") 
+    simScript.close()
+
+    os.system("chmod u+x " + opts.app + ".sim")
+
+if __name__ == "__main__":
+    main()
