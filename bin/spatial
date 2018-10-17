@@ -24,7 +24,7 @@ def main():
 
   (opts, args) = parser.parse_known_args()
 
-  java_cmd = "sbt \"" + sbt_project + "runMain " + name + " --name " + opts.app + " " + ' '.join(args) + "\""
+  java_cmd = "sbt \"runMain " + opts.app + " " + ' '.join(args) + "\""
 
   print(java_cmd)
 
@@ -40,7 +40,6 @@ def main():
     simScript.write("cd gen/" + opts.app + "\n")
     simScript.write("bash run.sh \"$@\"\n") 
     simScript.close()
-
     os.system("chmod u+x " + opts.app + ".sim")
 
 if __name__ == "__main__":
