@@ -6,6 +6,8 @@
   * [SBT](https://www.scala-sbt.org/1.0/docs/Setup.html)
 
 ## To setup:
+
+Spatial-quickstart provides the scala project skeleton and a build.sbt configured to fetch Spatial from the Nexus Repository Manager without requiring a local installation or build of the compiler.  If you prefer the full language and compiler, visit the [Spatial repo](https://github.com/stanford-ppl/spatial)
   
 ```bash
 git clone https://github.com/stanford-ppl/spatial-quickstart.git
