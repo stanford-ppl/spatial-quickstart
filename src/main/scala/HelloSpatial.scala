@@ -74,7 +74,7 @@ import spatial.dsl._
     val result2 = getArg(io1)
 
     println("Received " + result1 + " and " + result2)
-    val cksum = (result1 == {args(0).to[Int] + args(1).to[Int]}) && (result2 == args(0).to[Int]) // The {} brackets are Scala's way of scoping operations
+    val cksum = (result1 == {args(0).to[Int] + 7.to[Int]}) && (result2 == args(0).to[Int]) // The {} brackets are Scala's way of scoping operations
     println("ArgTest pass? " + cksum)
   }
 }
