@@ -1,0 +1,3 @@
+[submodule "models/resources"]
+	path = models/resources
+	url = git@github.com:stanford-ppl/resource-pmmls

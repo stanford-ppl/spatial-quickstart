@@ -1,6 +1,6 @@
 organization := "org"
 
-version := "1.0-SNAPSHOT"
+version := "1.1-SNAPSHOT"
 
 name := "spatial-app"
 
@@ -8,9 +8,9 @@ scalaVersion := "2.12.7"
 val paradiseVersion = "2.1.0"
 
 // libraryDependencies ++= Seq("edu.stanford.cs.dawn" %% "spatial" % "1.0")
-libraryDependencies ++= Seq("edu.stanford.cs.dawn" %% "spatial" % "1.1-SNAPSHOT")
+libraryDependencies ++= Seq("edu.stanford.cs.dawn" %% "spatialdse" % "1.1-SNAPSHOT")
 
-resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository/"
+//resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository/"
 resolvers += Resolver.sonatypeRepo("snapshots")
 resolvers += Resolver.sonatypeRepo("releases")
 
