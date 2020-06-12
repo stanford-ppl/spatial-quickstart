@@ -5,9 +5,9 @@ import spatial.dsl._
 
   def main(args: Array[String]): Unit = {
     // Get matrix dimensions from command line
-    val m = args(0).to[Int]
-    val n = args(1).to[Int]
-    val p = args(2).to[Int]
+    val m = args(0).to[Int]; bound(m) = 512
+    val n = args(1).to[Int]; bound(n) = 256
+    val p = args(2).to[Int]; bound(p) = 512
 
     // Pass dimensions to Accel
     val M = ArgIn[Int]
@@ -29,16 +29,16 @@ import spatial.dsl._
     setMem(B,b)
 
     // Expose tile sizes as DSE parameters
-    val bm = 16 (1 -> 128)
-    val bn = 16 (16 -> 16 -> 1028)
-    val bp = 16 (16 -> 16 -> 1028)
+    val bm = 16 (16 -> 8 -> 64)
+    val bn = 16 (16 -> 16 -> 128)
+    val bp = 16 (16 -> 16 -> 128)
 
     // Expose parallelization factors as DSE parameters
-    val tileM_par = 2   (1 -> 6)
-    val tileP_par = 2   (1 -> 6)
-    val M_par = 2 (1 -> 8)
-    val P_par = 2 (1 -> 8)
-    val ip = 2  (1 -> 64)
+    val tileM_par = 1   (1 -> 3)
+    val tileP_par = 2   (1 -> 3)
+    val M_par = 1 (1 -> 2 -> 4)
+    val P_par = 2 (1 -> 2 -> 4)
+    val ip = 2  (1,2,8,32)
     val load_par = 4   (1,2,4,8,16)
     val store_par = 4   (1,2,4,8,16)
 
