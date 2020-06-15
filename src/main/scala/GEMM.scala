@@ -5,9 +5,14 @@ import spatial.dsl._
 
   def main(args: Array[String]): Unit = {
     // Get matrix dimensions from command line
-    val m = args(0).to[Int]; bound(m) = 512
-    val n = args(1).to[Int]; bound(n) = 256
-    val p = args(2).to[Int]; bound(p) = 512
+    val m = args(0).to[Int];
+    val n = args(1).to[Int];
+    val p = args(2).to[Int];
+
+    // Set bounds for arguments (default values for DSE model)
+    bound(m) = 512
+    bound(n) = 256
+    bound(p) = 512
 
     // Pass dimensions to Accel
     val M = ArgIn[Int]
